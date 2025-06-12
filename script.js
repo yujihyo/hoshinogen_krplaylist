@@ -12,7 +12,7 @@ document.querySelectorAll('.section-wrapper').forEach(section => {
   toggleBtn.addEventListener('click', () => {
     expanded = !expanded;
     cards.forEach((card, index) => {
-      if (index >= 8) {
+      if (index >= 4) {
         card.classList.toggle('visible', expanded);
       }
     });
