@@ -30,16 +30,30 @@ header h1 {
   font-size: 1.4rem;
   margin: 2rem 2rem 1rem;
   color: #444;
+  text-align: center;
 }
 
 /* 그리드 영역 */
 .artist-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 줄당 최대 4개 */
   gap: 1.5rem;
   padding: 0 2rem 2rem;
   max-width: 1200px;
   margin: auto;
+}
+
+/* 반응형 대응 */
+@media (max-width: 900px) {
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 카드 */
@@ -83,4 +97,36 @@ footer {
   background-color: #eee;
   font-size: 0.9rem;
   color: #777;
+}
+
+/* 처음엔 8개까지만 보여주고 나머지는 숨김 */
+.artist-card {
+  display: none;
+}
+
+.artist-card.visible {
+  display: block;
+}
+
+.section-wrapper .artist-grid .artist-card:nth-child(-n+4) {
+  display: block;
+}
+
+.toggle-button {
+  display: block;
+  margin: 4px auto 96px;         /* 화면 가운데 정렬 */
+  padding: 8px 16px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  max-width: 400px; 
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+  background-color: #666;
 }
