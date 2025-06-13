@@ -66,3 +66,20 @@ loadSection("section-02", "sections/section-02.html", initSection);
 loadSection("section-03", "sections/section-03.html", initSection);
 loadSection("section-04", "sections/section-04.html", initSection);
 loadSection("section-05", "sections/section-05.html", initSection);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("timetable-popup");
+  const openBtn = document.getElementById("open-timetable");
+
+  // 열기
+  openBtn.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+  });
+
+  // 바깥 클릭 시 닫기
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
+  });
+});
