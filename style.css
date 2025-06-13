@@ -130,3 +130,33 @@ footer {
 .toggle-button:hover {
   background-color: #666;
 }
+
+.spotify-link {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.spotify-icon {
+  width: 18px;
+  height: 18px;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+
+.spotify-icon:hover {
+  filter: grayscale(0%);
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 0.5rem;
+}
+
+.like-button:hover {
+  transform: scale(1.2);
+}

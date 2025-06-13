@@ -19,3 +19,24 @@ document.querySelectorAll('.section-wrapper').forEach(section => {
     toggleBtn.textContent = expanded ? '접기' : '더보기';
   });
 });
+
+document.querySelectorAll('.like-button').forEach(button => {
+  const id = button.dataset.id;
+
+  // 초기 상태 설정
+  if (localStorage.getItem(`like-${id}`) === 'true') {
+    button.textContent = '❤️';
+  }
+
+  button.addEventListener('click', () => {
+    const liked = localStorage.getItem(`like-${id}`) === 'true';
+
+    if (liked) {
+      localStorage.setItem(`like-${id}`, 'false');
+      button.textContent = '🤍';
+    } else {
+      localStorage.setItem(`like-${id}`, 'true');
+      button.textContent = '❤️';
+    }
+  });
+});
