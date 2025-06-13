@@ -40,3 +40,21 @@ document.querySelectorAll('.like-button').forEach(button => {
     }
   });
 });
+
+// script.js
+function loadSection(id, file) {
+  fetch(file)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(id).innerHTML = html;
+    })
+    .catch(err => {
+      console.error(`Error loading ${file}:`, err);
+    });
+}
+
+loadSection("section-01", "sections/section-01.html");
+loadSection("section-02", "sections/section-02.html");
+loadSection("section-03", "sections/section-03.html");
+loadSection("section-04", "sections/section-04.html");
+loadSection("section-05", "sections/section-05.html");

@@ -148,15 +148,32 @@ footer {
   filter: grayscale(0%);
 }
 
+.artist-card {
+  position: relative; /* 썸네일 위에 하트를 띄우기 위해 필요 */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.like-overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+}
+
 .like-button {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  transition: transform 0.2s;
-  margin-top: 0.5rem;
+  color: rgba(255, 0, 0, 0.6); /* 빨간색 투명 하트 */
+  transition: transform 0.2s, color 0.2s;
 }
 
 .like-button:hover {
   transform: scale(1.2);
+  color: rgba(255, 0, 0, 0.9); /* hover 시 더 진하게 */
 }
